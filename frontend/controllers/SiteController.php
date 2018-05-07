@@ -212,4 +212,10 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-}
+    
+    public function actionSay ($message='Привет, жопа!') {
+        return $this->render ('say', ['message' => $message]);
+    }
+    
+        
+    }
