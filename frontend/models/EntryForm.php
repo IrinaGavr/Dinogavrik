@@ -6,7 +6,7 @@ use Yii;
 use yii\base\Model;
 
 
-class EmptyForm extends Model  {
+class EntryForm extends Model  {
 
     public $name;
     public $email;
