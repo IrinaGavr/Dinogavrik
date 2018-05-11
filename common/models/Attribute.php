@@ -10,7 +10,9 @@ namespace common\models;
  * @author irina
  */
 class Attribute extends \yii\db\ActiveRecord {
-    
+    public static function tableName() {
+        return "Attribute";
+    }
 
 
 }

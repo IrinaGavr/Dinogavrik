@@ -7,7 +7,7 @@ use common\models\Attribute;
     <ul>
         <li>
     <?= html::encode("{$value->name} ({$value->id})") ?>:
-    <?= $value->population ?>
+    <? //= $value->population ?>
     </li>
     <?php endforeach; ?>
     </ul>

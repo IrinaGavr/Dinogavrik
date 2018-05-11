@@ -19,13 +19,13 @@ class AttributeController extends Controller {
 
         $pagination = new Pagination([
             'defaultPageSize' => 10,
-//            'totalCount' => $query->count(),
+            'totalCount' => $query->count(),
         ]);
 
         $attribute = $query->orderBy('name')
                         ->offset($pagination->offset)
-                        ->limit($pagination->limit);
-//                ->all;
+                        ->limit($pagination->limit)
+                ->all();
 
         return $this->render('index', [
                     'attribute' => $attribute,
