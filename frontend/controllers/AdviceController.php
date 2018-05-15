@@ -12,7 +12,7 @@ class AdviceController extends Controller {
 
     public function actionAdvice() {
         $query = Ad::find();
-        $queryImages = \common\models\Advice::find()->distinct('image');
+        $queryImages = \common\models\Advice::find()->andWhere('image');
 
         $pagination = new Pagination([
             'defaultPageSize' => 10,
@@ -27,7 +27,7 @@ class AdviceController extends Controller {
         return $this->render('advice', [
                     'adviceName' => $adviceName,
                     'pagination' => $pagination,
-//                    'getImages' => $queryImages->getImage(),
+                    'getImages' => $queryImages,
         ]);
     }
  
