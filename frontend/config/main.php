@@ -41,6 +41,8 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '/advice'=>'advice/advice',
+                '/advice/<url:.>'=>'advice/view'
             ],
         ],
       
