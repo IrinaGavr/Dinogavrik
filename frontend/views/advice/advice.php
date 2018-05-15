@@ -2,10 +2,13 @@
 
 use yii\helpers\Html;
 use common\models\Ad;
+use common\models\Advice;
 ?>
 <h1>Статечки</h1>
 <div style="width: 100%">
-    <div style="width: 30%; float: left;"> </div>
+    <div style="width: 30%; float: left;">
+    <img src="/var/www/dinogavrik/images/<?php $model->'image'?>">
+    </div>
 
     <?php foreach ($adviceName as $value): ?>
         <div style="width: 70%; float: right; height: 50px;">          

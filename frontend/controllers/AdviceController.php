@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use yii\web\Controller;
 use common\models\Ad;
+use common\models\Advice;
 use yii\data\Pagination;
 
 
@@ -25,12 +26,12 @@ class AdviceController extends Controller {
                 ->limit($pagination->limit)
                 ->all();
         
-        $getImage;
-        
+   
         
 
 
         return $this->render('advice', [
+                    'getImage' => $getImage,
                     'adviceName' => $adviceName,
                     'pagination' => $pagination,
         ]);
