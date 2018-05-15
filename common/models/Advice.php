@@ -96,4 +96,10 @@ class Advice extends \yii\db\ActiveRecord
             'leicaMicro' => 'Leica Micro',
         ];
     }
+    
+    public function getImages() {
+        
+        return $this-> images;
+        
+    }
 }

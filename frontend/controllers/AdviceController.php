@@ -14,7 +14,6 @@ class AdviceController extends Controller {
         $query = Ad::find();
 
 
-
         $pagination = new Pagination([
             'defaultPageSize' => 10,
             'totalCount' => $query->count(),
@@ -24,18 +23,17 @@ class AdviceController extends Controller {
                 ->offset($pagination->offset)
                 ->limit($pagination->limit)
                 ->all();
-        
-        $getImage;
-        
-        
-
 
         return $this->render('advice', [
                     'adviceName' => $adviceName,
                     'pagination' => $pagination,
         ]);
     }
+ 
+    public function actionView($url) {
+        $advice = Ad::find()->andWhere(['url'=>$url])->one();
+        if($advice){}
+        return $this->redirect("site/error");
+    }
     
-    
-
 }
