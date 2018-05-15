@@ -98,4 +98,6 @@ class Ad extends \yii\db\ActiveRecord
             'id' => 'ID',
         ];
     }
+    
+    
 }

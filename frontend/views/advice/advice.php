@@ -2,16 +2,15 @@
 
 use yii\helpers\Html;
 use common\models\Ad;
-use common\models\Advice;
 ?>
-<h1>Статечки</h1>
+<h1>Статеечки</h1>
 <div style="width: 100%">
     <div style="width: 30%; float: left;">
-<<<<<<< HEAD
-    <img src="/var/www/dinogavrik/images/<?php $model->'image'?>">
-=======
-    
->>>>>>> d622dc82aeb9d14b23fa76846b6098f3bd42a44a
+        
+
+            <img src="<?= $model->GetImage() ?>">
+
+
     </div>
 
     <?php foreach ($adviceName as $value): ?>

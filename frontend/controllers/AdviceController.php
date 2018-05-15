@@ -1,10 +1,9 @@
 <?php
 namespace frontend\controllers;
 
-
+use Yii;
 use yii\web\Controller;
 use common\models\Ad;
-use common\models\Advice;
 use yii\data\Pagination;
 
 
@@ -13,7 +12,7 @@ class AdviceController extends Controller {
 
     public function actionAdvice() {
         $query = Ad::find();
-
+        $queryImages = \common\models\Advice::find()->distinct('image');
 
         $pagination = new Pagination([
             'defaultPageSize' => 10,
@@ -24,18 +23,11 @@ class AdviceController extends Controller {
                 ->offset($pagination->offset)
                 ->limit($pagination->limit)
                 ->all();
-<<<<<<< HEAD
-        
-   
-        
-
-=======
->>>>>>> d622dc82aeb9d14b23fa76846b6098f3bd42a44a
 
         return $this->render('advice', [
-                    'getImage' => $getImage,
                     'adviceName' => $adviceName,
                     'pagination' => $pagination,
+//                    'getImages' => $queryImages->getImage(),
         ]);
     }
  
