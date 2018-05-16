@@ -6,7 +6,7 @@ use common\models\Advice;
 ?>
 <h1>Статеечки</h1>
 <div style="width: 100%">
-
+    <img src="<?=$model->getImage()?>">
     <?php foreach ($adviceName as $value): ?>
         <div style="width: 70%; float: right; height: 50px;">          
 

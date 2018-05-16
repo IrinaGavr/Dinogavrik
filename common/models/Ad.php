@@ -99,5 +99,6 @@ class Ad extends \yii\db\ActiveRecord
         ];
     }
     
+
     
 }

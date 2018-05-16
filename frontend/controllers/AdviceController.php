@@ -27,7 +27,7 @@ class AdviceController extends Controller {
         return $this->render('advice', [
                     'adviceName' => $adviceName,
                     'pagination' => $pagination,
-                    'getImages' => $queryImages,
+                    'images' => $queryImages->getImage(),
         ]);
     }
  
