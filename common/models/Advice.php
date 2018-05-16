@@ -36,35 +36,32 @@ use Yii;
  * @property int $optica100Spb
  * @property int $leicaMicro
  */
-class Advice extends \yii\db\ActiveRecord
-{
+class Advice extends \yii\db\ActiveRecord {
+
     /**
      * {@inheritdoc}
      */
-    public static function tableName()
-    {
+    public static function tableName() {
         return 'Advice';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function rules()
-    {
+    public function rules() {
         return [
-            [['id_prefix', '_id_import', 'prof', 'active', 'sort', 'viewcategory', 'steth', 'otsc', 'ophthalm', 'rumex', 'rumexbaltics', 'ropticsru', 'greenoptic', 'optica100', 'ropticskz', 'ropticsua', 'mednabor', '_id', '_id_prefix', 'ropticsby', 'optica100Spb', 'leicaMicro'], 'integer'],
-            [['date_added', 'date_modified'], 'safe'],
-            [['_site_import'], 'string', 'max' => 200],
-            [['image'], 'string', 'max' => 128],
-            [['url'], 'string', 'max' => 255],
+                [['id_prefix', '_id_import', 'prof', 'active', 'sort', 'viewcategory', 'steth', 'otsc', 'ophthalm', 'rumex', 'rumexbaltics', 'ropticsru', 'greenoptic', 'optica100', 'ropticskz', 'ropticsua', 'mednabor', '_id', '_id_prefix', 'ropticsby', 'optica100Spb', 'leicaMicro'], 'integer'],
+                [['date_added', 'date_modified'], 'safe'],
+                [['_site_import'], 'string', 'max' => 200],
+                [['image'], 'string', 'max' => 128],
+                [['url'], 'string', 'max' => 255],
         ];
     }
 
     /**
      * {@inheritdoc}
      */
-    public function attributeLabels()
-    {
+    public function attributeLabels() {
         return [
             'id' => 'ID',
             'id_prefix' => 'Id Prefix',
@@ -96,13 +93,18 @@ class Advice extends \yii\db\ActiveRecord
             'leicaMicro' => 'Leica Micro',
         ];
     }
-    
-    public function getImage() {
-        
-        return Yii::$app->params['url']['advices'].$this->image;
-      
+
+    public function getLang() {
         
     }
-    
+
+    public function getName() {
+        
+    }
+
+    public function getImage() {
+
+        return Yii::$app->params['url']['advices'] . $this->image;
+    }
 
 }

@@ -7,13 +7,6 @@ use common\models\Advice;
 <h1>Статеечки</h1>
 <div style="width: 100%">
 
-
-
-            
-
-
-
-
     <?php foreach ($adviceName as $value): ?>
         <div style="width: 70%; float: right; height: 50px;">          
 
