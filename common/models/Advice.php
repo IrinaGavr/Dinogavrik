@@ -104,7 +104,7 @@ class Advice extends \yii\db\ActiveRecord {
 
     public function getImage() {
 
-        return Yii::$app->params['url']['advices'].$this->image;
+        return Yii::$app->params['url']['advices'] . $this->image;
     }
 
 }
