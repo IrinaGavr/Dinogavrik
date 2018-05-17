@@ -42,7 +42,8 @@ return [
             'showScriptName' => false,
             'rules' => [
                 '/advice'=>'advice/advice',
-                '/advice/<url:.>'=>'advice/view'
+                '/advice/<url:.>'=>'advice/view',
+                'advice/<url:.+>' => 'advice/view',
             ],
         ],
       
