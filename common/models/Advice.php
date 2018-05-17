@@ -132,5 +132,13 @@ class Advice extends \yii\db\ActiveRecord {
     public function getAdviceImage() {
         return Yii::$app->params['images_path']['advices'].$this->image;
     }
+    
+    public function getAdviceContent() {
+        $content = false;
+        if($this->lang) {
+            $content->lang->content;
+        }
+        return $content;
+    }
 
 }

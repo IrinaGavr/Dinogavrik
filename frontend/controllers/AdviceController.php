@@ -26,8 +26,14 @@ class AdviceController extends Controller {
 
     public function actionView($url) {
         $advice = Ad::find()->andWhere(['url' => $url])->one();
+        $Query = \common\models\Advice::find();
+        
+        $render = [
+            'content'=>$Query->getAdviceContent(),
+        ];
+        
         if ($advice) {
-            return $this->render('view');
+            return $this->render('view',$render);
         } else {
             return $this->redirect("site/error");
         }
