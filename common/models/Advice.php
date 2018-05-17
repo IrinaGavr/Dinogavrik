@@ -94,17 +94,43 @@ class Advice extends \yii\db\ActiveRecord {
         ];
     }
 
-    public function getLang() {
-        
+    public function getLangs() {
+        return $this->hasMany(Ad::className(), ['id_advice'=>'id']);
+    }
+    
+    public function getLang($id_lang=false){
+        $lang = false;
+        if($id_lang){
+            foreach ($this->langs as $_lang){
+                if($_lang->id_lang==$id_lang){
+                    $lang = $_lang;
+                }
+            }
+        }
+        elseif(!$id_lang && $this->langs){
+            $lang = $this->langs[0];
+        }
+        return $lang;
     }
 
     public function getName() {
-        
+        $name = false;
+        if($this->lang){
+            $name = $this->lang->name;
+        }
+        return $name;
+    }
+    
+    public function getAdviceUrl() {
+        $url = false;
+        if($this->lang){
+            $url = "/advice/".$this->lang->url;
+        }
+        return $url;
     }
 
-    public function getImage() {
-
-        return Yii::$app->params['url']['advices'] . $this->image;
+    public function getAdviceImage() {
+        return Yii::$app->params['images_path']['advices'].$this->image;
     }
 
 }

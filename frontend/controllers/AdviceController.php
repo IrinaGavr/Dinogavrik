@@ -11,23 +11,17 @@ use yii\data\Pagination;
 class AdviceController extends Controller {
 
     public function actionAdvice() {
-        $query = Ad::find();
-        $queryImages = \common\models\Advice::find()->andWhere('image');
-
-        $pagination = new Pagination([
-            'defaultPageSize' => 10,
-            'totalCount' => $query->count(),
+        $adviceQuery = \common\models\Advice::find();
+        $adviceProvider = new \yii\data\ActiveDataProvider([
+            'query'=> $adviceQuery,
+            'pagination'=>[
+                'pageSize'=>10,
+                'totalCount' => $adviceQuery->count(),
+            ]
         ]);
 
-        $adviceName = $query->distinct('name')
-                ->offset($pagination->offset)
-                ->limit($pagination->limit)
-                ->all();
-
         return $this->render('advice', [
-                    'adviceName' => $adviceName,
-                    'pagination' => $pagination,
-                    'images' => $queryImages->getImage(),
+                    'provider' => $adviceProvider
         ]);
     }
  
